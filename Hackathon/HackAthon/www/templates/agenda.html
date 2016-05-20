@@ -1,0 +1,47 @@
+ 
+<ion-view view-title="Agenda">
+    <ion-content ng-controller="AgendaCtrl as vm">
+
+        <div ng-repeat="items in vm.agendaService.agendaItems" class="card" ng-class="{'pastEvent': !items.Active}">
+                <div class="item item-divider">
+                    {{items.Name}}
+                    <span style="float:right"></span>
+                    
+                </div>
+                <div class="item item-text-wrap">
+                    <div class="row">
+                        <div class="col col-20">
+                            {{items.StartTime}}
+                        </div>
+                        <div class="col col-70">
+                            {{items.Description}}
+                        </div>
+                        <div class="col col-10" ng-model="extrainfo"ng-click="extrainfo  = !extrainfo">
+                            <span class="ion-plus-circled"></span>
+                        </div>
+
+                    </div>
+                    <div class="row agendaClosed" ng-class="{'agendaSlide': extrainfo}">
+                        <div class="row">
+                            <div class="col col-30">
+                                <div class="item item-avatar" style="border: none">
+                                    <img src="../img/img_placeholder_avatar.jpg" />
+                                    <h2>{{items.ResponsiblePersonName}}</h2>
+
+                                </div>
+                            </div>
+                            <div class="col col-30">
+                                Title: The Chosen one
+                            </div>
+                            <div class="col col-30">
+                              
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+                <div class="item item-divider">
+                    I'm a Footer in a Card!
+                </div>
+            </div>
+        </ion-content>
+</ion-view>

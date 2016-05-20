@@ -1,0 +1,29 @@
+<ion-modal-view ng-contorller="LoginCtrl as vm">
+  <ion-header-bar >
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" >Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content style="background-color:transparent;">
+      <div class="list list-inset">
+          <label class="item item-input">
+              <span class="input-label">Username</span>
+              <input type="text" ng-model="vm.loginService.user.Email">
+          </label>
+          <label class="item item-input ">
+              <span class="input-label">Password</span>
+              <input type="password" ng-model="vm.loginService.user.Password">
+          </label>
+      </div>
+      <div class="padding">
+          <p class="text-center">
+              <ion-spinner icon="spiral" class="spinner-positive" ng-hide="!vm.loading"></ion-spinner>
+          </p>
+          <button class="button button-block icon-right ion-chevron-right button-positive" ng-model="vm.loading" ng-hide="vm.loading" ng-click="vm.getUser(); vm.loading = !vm.loading">
+              Sign-In
+          </button>
+        
+      </div>
+  </ion-content>
+</ion-modal-view>

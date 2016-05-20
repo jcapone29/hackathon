@@ -1,0 +1,38 @@
+.agendaSlide {
+        -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    height: 100px !important;
+     opacity: 1 !important;
+}
+
+.agendaClosed {
+       -ms-opacity: 0;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.pastEvent {
+        opacity: 0.55;
+}
+
+.pane {
+   background-color: #4D4D4D;
+}
+
+.navview {
+        background-color: #777777
+}
+
+
+.sideitem {
+
+}
+
+.rating li {
+  display: inline;
+}
+

@@ -1,0 +1,17 @@
+<ion-view view-title="Ratings">
+  <ion-content ng-controller="RatingCtrl as vm"
+    <div class="list card">
+      <ion-item ng-repeat="topic in vm.agendaItems" ng-hide="topic.Active">
+          <div class="item item-divider">
+            {{topic.Name}}
+          </div>
+          <div class="item item-text-wrap">
+            {{topic.Description}}
+          </div>
+          <div class="item item-divider">
+            <rating ng-model="topic.RatingRate" max="topic.RatingMax"></rating>
+          </div>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-view>

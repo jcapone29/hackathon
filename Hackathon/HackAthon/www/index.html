@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="Scripts/ngCordova/ng-cordova.min.js"></script>
+    <script src="Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="lib/ionic-rating/ionic-rating.js"></script>
+    <script src="dist/app.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAA41CL7mfn87p-YO39X_TGWlyvMBYP6_A"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+   
+</head>
+
+<body ng-app="genscape.mobile">
+
+    <ion-side-menus enable-menu-with-back-views="false" ng-controller="LoginCtrl as vm">
+        <ion-side-menu-content>
+            <ion-nav-bar class="bar-stable" >
+                <ion-nav-back-button>
+                </ion-nav-back-button>
+                <ion-nav-buttons side="left">
+                    <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+                </ion-nav-buttons>
+            </ion-nav-bar>
+            <ion-nav-view name="menuContent" ng-init="vm.checkUser()"></ion-nav-view>
+        </ion-side-menu-content>
+        <ion-side-menu side="left">
+            <ion-header-bar class="bar-stable" >
+                <h1 class="title">Gen Summit</h1>
+            </ion-header-bar>
+            <ion-content  class="navview">
+                <div class="row">
+                    <div class="item item-avatar" style="border: none">
+                        <img src="../img/img_placeholder_avatar.jpg" />
+                        <h2>{{vm.loginService.user.UserName}}</h2>
+
+                    </div>
+                </div>
+                <ion-list>
+                    <ion-item menu-close href="#/agenda" class="sideitem">
+                        Agenda
+                    </ion-item>
+                    <ion-item menu-close href="#/checkin">
+                        Check In
+                    </ion-item>
+                    <ion-item menu-close href="#/ratings">
+                        Ratings
+                    </ion-item>
+                    <ion-item menu-close>
+                        <button type="button" class="button button-dark" ng-click="vm.cleatCache();">Sign out</button>
+                    </ion-item>
+             
+                </ion-list>
+                
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
+
+
+
+</body>
+</html>
